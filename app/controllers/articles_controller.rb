@@ -3,15 +3,15 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-	def create
-		@article = Article.new(article_params)
-		@article.save
-		redirect_to article_show(@article)
-	end
+  def create
+    @article = Article.new(article_params)
+    @article.save
+    redirect_to article_show(@article)
+  end
 
-	private
+  private
 
-	def article_params
-		params.require(:article).permit(:title, :description)
-	end  	
+  def article_params
+    params.require(:article).permit(:title, :description)
+  end  	
 end	
