@@ -1,13 +1,9 @@
 require 'test_helper'
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
-	def sign_in_as(user, password)
-    post login_path, params: { session: { email: user.email, password: password } }
-  end
-
   def setup
     @category = Category.create(name: "Sports")
-    @user = User.create(username: "john", email: "john@example.com", password: "password", admin: true)
+    @user = User.create(username: "joanelizabeth", email: "joane@example.com", password: "password", admin: true)
   end
   
   test "should get categories index" do
@@ -32,8 +28,4 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to categories_path
   end
-
 end
-
-
-
